@@ -1,0 +1,9 @@
+/.gradle
+/.idea
+!.idea/runConfigurations/
+!.idea/codeStyles/
+/out
+/build
+*.iml
+*.ipr
+*.iws

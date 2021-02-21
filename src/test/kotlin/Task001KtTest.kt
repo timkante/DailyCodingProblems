@@ -5,6 +5,7 @@ import io.kotest.matchers.shouldBe
 import io.kotest.property.Arb
 import io.kotest.property.arbitrary.int
 import io.kotest.property.arbitrary.list
+import io.kotest.property.arbitrary.multiples
 import io.kotest.property.checkAll
 
 class Task001KtTest : StringSpec({
@@ -35,6 +36,18 @@ class Task001KtTest : StringSpec({
             val target = numbers.asSequence().distinct().shuffled().take(2).sum()
             withClue("<$numbers> contains two elements that add up to <$target>") {
                 numbers containsSumOf target shouldBe true
+            }
+        }
+    }
+
+    "a list of even numbers can never reach an uneven sum" {
+        checkAll(
+            Arb.list(gen = Arb.multiples(2, Int.MAX_VALUE), range = 2..15),
+            Arb.multiples(k = 2, max = Int.MAX_VALUE)
+        ) { numbers, randomEven ->
+            val target = randomEven - 1
+            withClue("<$numbers> contains two elements that add up to <$target>") {
+                numbers containsSumOf target shouldBe false
             }
         }
     }

@@ -16,14 +16,14 @@ class Task002KtTest : StringSpec({
         listOf(3, 2, 1).multiplied shouldContainInOrder listOf(2, 3, 6)
     }
 
-    "lists with size less than 2 do return themselves" {
-        checkAll(Arb.list(Arb.int(), 0..1)) { list ->
+    "lists with sizes of less than 2 do return themselves" {
+        checkAll(Arb.list(gen = Arb.int(), range = 0..1)) { list ->
             list.multiplied shouldBe list
         }
     }
 
     "list of ints gets converted correctly" {
-        checkAll(Arb.list(Arb.int(), 2..15)) { list ->
+        checkAll(Arb.list(gen = Arb.int(), range = 2..15)) { list ->
             list.multiplied.withIndex().forEach { (index, convertedListElement) ->
                 convertedListElement shouldBe list
                     .filterIndexed { elementIndex, _ -> elementIndex != index }

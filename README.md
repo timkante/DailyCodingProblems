@@ -1,4 +1,4 @@
-#Daily Coding Problems
+# Daily Coding Problems
 
 My solutions for the coding-interview-questions provided by [Daily Coding Problem](https://www.dailycodingproblem.com/)
 
@@ -8,7 +8,7 @@ implementation | <a href="https://kotlinlang.org/"><img src="https://upload.wiki
 testing | <a href="https://kotest.io/"><img src="https://kotest.io/img/logo.png" height="64" alt="Kotest-Logo" title="Kotest" /></a>
 building | <a href="https://gradle.com/"><img src="https://gradle.org/images/gradle-knowledge-graph-logo.png" height="64" alt="Gradle-Logo" title="Gradle" /></a>
 
-###Coding Problems ordered by number:
+### Coding Problems ordered by number:
 
 <details>
 <summary>

@@ -38,3 +38,30 @@ For example, if our input was `[1, 2, 3, 4, 5]`, the expected output would be `[
 * [x] Follow-up: what if you can't use division?
 ---
 </details>
+<details>
+<summary>
+<a href="src/main/kotlin/Task003.kt">Coding Problem #3 - [medium]</a>
+</summary>
+
+This problem was asked by _Google_.
+
+Given the root to a binary tree, implement `serialize(root)`, which serializes the tree into a string, and `deserialize(s)`, which deserializes the string back into the tree.
+
+For example, given the following Node class
+
+```python
+class Node:
+    def __init__(self, val, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+```
+
+* [x] The following test should pass:
+
+```python
+node = Node('root', Node('left', Node('left.left')), Node('right'))
+assert deserialize(serialize(node)).left.left.val == 'left.left'
+```
+---
+</details>
